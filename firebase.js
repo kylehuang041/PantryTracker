@@ -2,24 +2,26 @@
 import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
 import { getFirestore } from 'firebase/firestore'
+// import { getAuth } from 'firebase/auth'
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
-  apiKey: "AIzaSyBijPRHdTjOznbL1fuThhC-MVaVWjLcx10",
-  authDomain: "pantrytracker-55282.firebaseapp.com",
-  projectId: "pantrytracker-55282",
-  storageBucket: "pantrytracker-55282.appspot.com",
-  messagingSenderId: "168567739062",
-  appId: "1:168567739062:web:3768105b00d09311188c17",
-  measurementId: "G-9EWBTD4881"
+  apiKey: process.env.NEXT_PUBLIC_API_KEY,
+  authDomain: process.env.NEXT_PUBLIC_AUTH_DOMAIN,
+  projectId: process.env.NEXT_PUBLIC_PROJ_ID,
+  storageBucket: process.env.NEXT_PUBLIC_STORAGE_BUCKET,
+  messagingSenderId: process.env.NEXT_PUBLIC_MESSAGING_SENDER_ID,
+  appId: process.env.NEXT_PUBLIC_APP_ID,
+  measurementId: process.env.NEXT_PUBLIC_MEASUREMENT_ID
 };
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
-const analytics = getAnalytics(app);
+// const auth = getAuth(app)
+// const analytics = getAnalytics(app);
 const firestore = getFirestore(app)
 
 export { firestore }
